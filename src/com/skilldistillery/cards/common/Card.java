@@ -8,21 +8,23 @@ package com.skilldistillery.cards.common;
 public class Card {
 	private Suit suit;
 	private Rank rank;
+	
+	public Card() {}
 
 	public Card(Suit suit, Rank rank) {
 		this.suit = suit;
 		this.rank = rank;
 	}
 
-	public int getValue(Card c) {
-		int value = rank.getValue();
+	public int getValue() {
+	int	value = this.rank.getValue();
 
 		return value;
 	}
 
 	@Override
 	public String toString() {
-		return rank + " of " + suit;
+		return " " +rank + " of " + suit;
 	}
 
 	@Override
