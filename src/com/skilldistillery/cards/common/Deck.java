@@ -18,15 +18,10 @@ public class Deck {
 		for (int suit = 0; suit < Suit.values().length; suit++) {
 			Suit s = Suit.values()[suit];
 			for (Rank r : Rank.values()) {
-				Card c = new Card(s,r);
+				Card c = new Card(s, r);
 				deck.add(c);
-			
+
 			}
-//			for (int rank = 0; rank < Rank.values().length; rank++) {
-//				Card newCard = new Card(Suit.values()[suit], Rank.values()[rank]);		// two for loops, messy!!
-//				deck.add(newCard);
-//
-//			}
 
 		}
 
@@ -45,8 +40,6 @@ public class Deck {
 		return hit;
 	}
 
-	
-
 	public List<Card> shuffleDeck() {
 
 		Collections.shuffle(deck);
@@ -54,7 +47,5 @@ public class Deck {
 		return deck;
 
 	}
-
-	
 
 }

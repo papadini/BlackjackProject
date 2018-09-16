@@ -8,41 +8,34 @@ import com.skilldistillery.cards.common.Deck;
 
 public abstract class Hand {
 	Deck deck = new Deck();
-	
-	public Hand () {}
-	
-	
-	public abstract int getHandValue();
-	
-	public void addCard( Card c) {	
-		deck.hit();
-		
+
+	public Hand() {
+
 	}
-	
-	public void clearHand() {
-		//hand.clear();
-		
+
+	// public abstract int getHandValue(List<Card> c);
+
+	public void addCard(Card c) {
+
 	}
-	
-	public List<Card> getCards( ) {
+
+	public void clearHand(List<Card> hand) {
+		hand.clear();
+
+	}
+
+	public List<Card> getCards() {
 		List<Card> hand = new ArrayList<>();
-		hand.add( deck.hit() );
-		hand.add( deck.hit() );
-		
-		
-	
+		hand.add(deck.hit());
+		hand.add(deck.hit());
+
 		return hand;
 	}
-	
+
 	@Override
 	public String toString() {
-		
-		
-		
+
 		return toString();
 	}
-	
-	
-	
 
 }

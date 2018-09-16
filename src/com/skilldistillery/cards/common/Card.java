@@ -8,8 +8,9 @@ package com.skilldistillery.cards.common;
 public class Card {
 	private Suit suit;
 	private Rank rank;
-	
-	public Card() {}
+
+	public Card() {
+	}
 
 	public Card(Suit suit, Rank rank) {
 		this.suit = suit;
@@ -17,18 +18,18 @@ public class Card {
 	}
 
 	public int getValue() {
-	int	value = this.rank.getValue();
+		int value = this.rank.getValue();
 
 		return value;
 	}
 
 	@Override
 	public String toString() {
-		
-		String cardPic = " " +rank + " of " + suit;
-				
-		return  cardPic;
-	} 
+
+		String cardPic = " " + rank + " of " + suit;
+
+		return cardPic;
+	}
 
 	@Override
 	public int hashCode() {
