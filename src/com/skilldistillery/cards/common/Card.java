@@ -24,8 +24,11 @@ public class Card {
 
 	@Override
 	public String toString() {
-		return " " +rank + " of " + suit;
-	}
+		
+		String cardPic = " " +rank + " of " + suit;
+				
+		return  cardPic;
+	} 
 
 	@Override
 	public int hashCode() {

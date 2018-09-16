@@ -2,9 +2,9 @@ package com.skilldistillery.cards.blackjack;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import com.skilldistillery.cards.common.Card;
-import com.skilldistillery.cards.common.Deck;
 
 public class BlackjackApp {
 
@@ -14,16 +14,29 @@ public class BlackjackApp {
 	}
 	
 	public void run() {
-		PlayerHand ph = new PlayerHand();
-		Deck deck = new Deck();
-		Card card = new Card();
+		System.out.println("Welcome to Blackjack");
+		playersTurn();
 		
-		deck.shuffleDeck();
-		List<Card> playerHand = new ArrayList<>( ph.getCards());
-		System.out.println(playerHand.toString()); // prints player hand
-		ph.getHandValue(playerHand); // gets value of hand
-		playerHand.add( ph.addCard() ); //adds card to players hand
-		System.out.println(playerHand.toString());
+		
+		
+		
+		
+	}
+	
+	public void playersTurn () {
+		DealerHand dh = new DealerHand();
+		
+		Scanner kb = new Scanner(System.in);
+		dh.shuffle();
+		List<Card> pHand = new ArrayList<>(dh.getCards());
+		List<Card> dHand = new ArrayList<>(dh.getCards());
+		dh.size(); 
+		System.out.println(pHand);
+		System.out.println(dHand);
+		
+		
+		
+		
 		
 		
 	}

@@ -34,6 +34,7 @@ public class Deck {
 
 	public int checkDeckSize() {
 		int deckSize = deck.size();
+		System.out.println(deckSize);
 
 		return deckSize;
 	}
@@ -44,14 +45,7 @@ public class Deck {
 		return hit;
 	}
 
-	public List<Card> dealHand() {
-		List<Card> hand = new ArrayList<>();
-		hand.add(deck.remove(0));
-		hand.add(deck.remove(0));
-		
-		return hand;
-
-	}
+	
 
 	public List<Card> shuffleDeck() {
 
@@ -61,9 +55,6 @@ public class Deck {
 
 	}
 
-	public List<Card> newDeck(List<Card> hand) {
-		deck.addAll(hand);
-		return deck;
-	}
+	
 
 }
