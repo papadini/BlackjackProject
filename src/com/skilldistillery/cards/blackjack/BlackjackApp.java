@@ -20,19 +20,18 @@ public class BlackjackApp {
 		dh.shuffle();
 		System.out.println("Ready to play? Y or N ");
 		String input = kb.next().toUpperCase();
-		while( input.equals("Y")) {
+		while (input.equals("Y")) {
 			playBJ();
 			System.out.println("Play again? Y or N ");
-			 input = kb.next().toUpperCase();
-			 dh.size();
+			input = kb.next().toUpperCase();
+			System.out.println("Cards left in deck " + dh.size());
 		}
 		System.out.println("Have a good day!");
 		kb.close();
 	}
 
 	public void playBJ() {
-		//DealerHand dh = new DealerHand();
-		//dh.shuffle();
+
 		List<Card> pHand = new ArrayList<>(dh.getCards()); // starting hands
 		List<Card> dHand = new ArrayList<>();
 		dHand.add(dh.deck.hit());
@@ -48,7 +47,6 @@ public class BlackjackApp {
 
 		System.out.println("Would you like to hit or stay?");
 		String input = kb.next();
-		
 
 		while (input.equals("hit")) {
 			pHand.add(dh.deck.hit());
@@ -71,20 +69,22 @@ public class BlackjackApp {
 			return;
 		}
 
-		while (dHandValue < 17 || pHandValue > dHandValue || pHandValue == dHandValue  ) {
-			dHand.add(dh.deck.hit());
-			System.out.println("Dealer hits");
-			System.out.println("Dealer is showing: " + dHand);
-			dHandValue = dh.getDealerHand(dHand);
-			if (dHandValue > 21) {
-				dealerBust();
-				return;
-			} else if (dHandValue == 21) {
-				dealerBlackjack();
-				return;
-			}else if ( pHandValue == dHandValue ){
+		while (dHandValue < 17 || pHandValue > dHandValue) {
+			if (pHandValue == dHandValue) {
 				push();
 				return;
+			} else {
+				dHand.add(dh.deck.hit());
+				System.out.println("Dealer hits");
+				System.out.println("Dealer is showing: " + dHand);
+				dHandValue = dh.getDealerHand(dHand);
+				if (dHandValue > 21) {
+					dealerBust();
+					return;
+				} else if (dHandValue == 21) {
+					dealerBlackjack();
+					return;
+				}
 			}
 		}
 
@@ -93,7 +93,7 @@ public class BlackjackApp {
 			// dHandValue = dh.getDealerHand( dHand );
 			playerWins();
 			return;
-		} else if(pHandValue < dHandValue ) {
+		} else if (pHandValue < dHandValue) {
 			pHandValue = dh.getPlayerHand(pHand);
 			// dHandValue = dh.getDealerHand( dHand );
 			dealerWins();
@@ -103,7 +103,6 @@ public class BlackjackApp {
 			return;
 		}
 
-		
 	}
 
 	public void playerBlackjack() {
@@ -113,7 +112,7 @@ public class BlackjackApp {
 		System.out.println("*****got*****");
 		System.out.println("**Blackjack**");
 		System.out.println("*************");
-		//System.exit(0);
+		// System.exit(0);
 
 	}
 
@@ -124,7 +123,7 @@ public class BlackjackApp {
 		System.out.println("*****got*****");
 		System.out.println("**Blackjack**");
 		System.out.println("*************");
-		//System.exit(0);
+		// System.exit(0);
 
 	}
 
@@ -135,7 +134,7 @@ public class BlackjackApp {
 		System.out.println("**************");
 		System.out.println("****Busted****");
 		System.out.println("**************");
-		//System.exit(0);
+		// System.exit(0);
 	}
 
 	public void playerBust() {
@@ -145,7 +144,7 @@ public class BlackjackApp {
 		System.out.println("**************");
 		System.out.println("****Busted****");
 		System.out.println("**************");
-		//System.exit(0);
+		// System.exit(0);
 	}
 
 	public void playerWins() {
@@ -155,7 +154,7 @@ public class BlackjackApp {
 		System.out.println("**************");
 		System.out.println("*****Wins*****");
 		System.out.println("**************");
-		//System.exit(0);
+		// System.exit(0);
 	}
 
 	public void dealerWins() {
@@ -165,16 +164,16 @@ public class BlackjackApp {
 		System.out.println("**************");
 		System.out.println("*****Wins*****");
 		System.out.println("**************");
-		//System.exit(0);
+		// System.exit(0);
 	}
-	
-	public void push () {
+
+	public void push() {
 		System.out.println("**************");
 		System.out.println("******No******");
 		System.out.println("****Winner****");
 		System.out.println("**************");
 		System.out.println("*****PUSH*****");
-		//System.exit(0);
+		// System.exit(0);
 	}
 
 }
