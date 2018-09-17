@@ -9,7 +9,7 @@ public enum Rank {
 	
 	
 	Rank (int rank) {
-		value = rank;
+		this.value = rank;
 		
 	}
 
@@ -21,13 +21,13 @@ public enum Rank {
 
 
 
-	@Override
-	public String toString() {
-		
-		return Integer.toString( getValue() );
-		
-		
-	}
+//	@Override
+//	public String toString() {
+//		
+//		return Integer.toString( getValue() );
+//		
+//		
+//	}
 	
 	
 	

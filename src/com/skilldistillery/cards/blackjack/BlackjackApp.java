@@ -25,8 +25,12 @@ public class BlackjackApp {
 			System.out.println("Play again? Y or N ");
 			input = kb.next().toUpperCase();
 			System.out.println("Cards left in deck " + dh.size());
+			if ( dh.size() < 15 ) {
+				System.out.println("Look at the time, its my break");
+				System.out.println("Have a good day!");
+				return;
+			}
 		}
-		System.out.println("Have a good day!");
 		kb.close();
 	}
 
